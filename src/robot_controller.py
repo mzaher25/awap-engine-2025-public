@@ -1343,4 +1343,5 @@ class RobotController:
         return True
     
     def get_time_remaining(self) -> Dict:
-        return {team.name: time for team, time in self.__game_state.time_remaining.items()}
+        return {team.name: time for team, time in copy.deepcopy(self.__game_state.time_remaining).items()}
+
