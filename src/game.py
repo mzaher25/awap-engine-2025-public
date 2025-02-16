@@ -261,16 +261,16 @@ class Game:
             return None
         elif self.blue_failed_init:
             print("Blue failed to initialize. Red wins.")
+            print("RED WINS")
             self.replay.append({})
-            self.replay.append({})
-            self.replay[1]["winner_color"] = "RED"
+            self.winner = "RED"
             self.export_replay(self.output_path)
             return Team.RED
         elif self.red_failed_init:
             print("Red failed to initialize. Blue wins.")
+            print("BLUE WINS")
             self.replay.append({})
-            self.replay.append({})
-            self.replay[1]["winner_color"] = "BLUE"
+            self.winner = "BLUE"
             self.export_replay(self.output_path)
             return Team.BLUE
 
