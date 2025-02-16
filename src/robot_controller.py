@@ -1341,3 +1341,6 @@ class RobotController:
         # Disband the Rat after effect is applied
         self.disband_unit(rat_id)
         return True
+    
+    def get_time_remaining(self) -> Dict:
+        return {team.name: time for team, time in self.__game_state.time_remaining.items()}
